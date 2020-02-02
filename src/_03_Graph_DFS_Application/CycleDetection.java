@@ -3,7 +3,7 @@ package _03_Graph_DFS_Application;
 public class CycleDetection {
 
     private Graph G;
-    private boolean[] visited;
+    private boolean[] visited;  // 记录是否访问过
     private boolean hasCycle = false;
 
     public CycleDetection(Graph G){

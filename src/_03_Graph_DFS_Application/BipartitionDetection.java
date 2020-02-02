@@ -4,7 +4,7 @@ package _03_Graph_DFS_Application;
 public class BipartitionDetection {
     // 二部图检测算法
     private Graph G;
-    private boolean[] visited;
+    private boolean[] visited;  // 记录是否访问过
     private int[] colors;
     private boolean isBipartite = true;
 
