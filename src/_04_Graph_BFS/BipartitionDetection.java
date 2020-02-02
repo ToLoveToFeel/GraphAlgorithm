@@ -24,20 +24,20 @@ public class BipartitionDetection {
                 }
     }
 
-    private boolean bfs(int v){
+    private boolean bfs(int s){
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(v);
-        visited[v] = true;
-        colors[v] = 0;
+        queue.add(s);
+        visited[s] = true;
+        colors[s] = 0;
         while (!queue.isEmpty()){
-            int cur = queue.remove();
-            for (int w : G.adj(cur))
+            int v = queue.remove();
+            for (int w : G.adj(v))
                 if (!visited[w]){
                     queue.add(w);
                     visited[w] = true;
-                    colors[w] = 1 - colors[cur];
+                    colors[w] = 1 - colors[v];
                 }
-                else if (colors[w] == colors[cur])  // cur相邻的点w之前已经访问过，并且颜色和cur一致，则不是二部图
+                else if (colors[w] == colors[v])  // v相邻的点w之前已经访问过，并且颜色和v一致，则不是二部图
                     return false;
         }
         return true;

@@ -24,14 +24,14 @@ public class CC {
             }
     }
 
-    private void bfs(int v, int ccid){
+    private void bfs(int s, int ccid){
 
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(v);
-        visited[v] = ccid;
+        queue.add(s);
+        visited[s] = ccid;
         while (!queue.isEmpty()){
-            int cur = queue.remove();
-            for (int w : G.adj(cur))
+            int v = queue.remove();
+            for (int w : G.adj(v))
                 if (visited[w] == -1){
                     queue.add(w);
                     visited[w] = ccid;

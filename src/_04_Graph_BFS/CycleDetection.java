@@ -24,20 +24,20 @@ public class CycleDetection {
                 }
     }
 
-    private boolean bfs(int v){
+    private boolean bfs(int s){
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(v);
-        visited[v] = true;
-        pre[v] = v;
+        queue.add(s);
+        visited[s] = true;
+        pre[s] = s;
         while (!queue.isEmpty()){
-            int cur = queue.remove();
-            for (int w : G.adj(cur))
+            int v = queue.remove();
+            for (int w : G.adj(v))
                 if (!visited[w]){
                     queue.add(w);
                     visited[w] = true;
-                    pre[w] = cur;
+                    pre[w] = v;
                 }
-                else if (w != pre[cur])  // w已经访问过，并且w不是cur的父节点，则说明有环
+                else if (w != pre[v])  // w已经访问过，并且w不是v的父节点，则说明有环
                     return true;
         }
         return false;

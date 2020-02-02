@@ -21,16 +21,16 @@ public class GraphBFS {
                 bfs(v);
     }
 
-    private void bfs(int v){
+    private void bfs(int s){
 
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(v);
-        visited[v] = true;
+        queue.add(s);
+        visited[s] = true;
         while (!queue.isEmpty()){
-            int cur = queue.remove();
-            order.add(cur);
+            int v = queue.remove();
+            order.add(v);
 
-            for (int w : G.adj(cur))
+            for (int w : G.adj(v))
                 if (!visited[w]) {
                     queue.add(w);
                     visited[w] = true;
