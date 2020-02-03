@@ -87,6 +87,7 @@ public class Graph {
         Graph graph = new Graph("./src/_05_Graph_Bridges/g.txt");
         System.out.println(graph);
     }
+
 }
 
 

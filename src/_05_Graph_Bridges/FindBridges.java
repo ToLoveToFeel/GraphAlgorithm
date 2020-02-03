@@ -27,7 +27,7 @@ public class FindBridges {
                 dfs(v, v);
     }
 
-    private void dfs(int v, int parent){  // 抓住当前考虑的点是v
+    private void dfs(int v, int parent){  // 抓住当前考虑的点是 v
         visited[v] = true;
         ord[v] = cnt;
         low[v] = ord[v];
